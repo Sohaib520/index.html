@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Student Data Add| Delete</title>
+<style>
+    form{
+        margin: 20px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: .5px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var StudentName = $("#StudentName").val();
+            var Reg = $("#Reg").val();
+            var CGPA = $("#CGPA").val();
+
+            var markup = "<tr><td>" + StudentName + "</td><td>" + Reg + "</td><td> "+ CGPA + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+
+    });    
+</script>
+</head>
+<body>
+    <form>
+        <input type="text" id="StudentName" placeholder="Student Name">
+        <input type="text" id="Reg" placeholder="Registration no">
+        <input type="text" id="CGPA" placeholder="CGPA" >
+    	<input type="button" class="add-row" value="Add Row">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Reg no</th>
+                <th>CGPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sohaib Imtiaz</td>
+                <td>BCS173012</td>
+                <td>3.5</td>
+            </tr>
+        </tbody>
+    </table>
+</body> 
+</html>                            
